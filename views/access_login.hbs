@@ -1,0 +1,21 @@
+<div class="container w-50 p-5 my-5 shadow">
+  {{!< sign_layout}}
+  <h1 class="text-center mb-5">Đăng nhập</h1>
+  <form method="post" action='/access/login'>
+    <div class="mb-3">
+      <label for="inputEmail" class="form-label">Địa chỉ Email</label>
+      <input name="email" type="email" class="form-control" required>
+    </div>
+    <div class="mb-3">
+      <label for="inputPassword" class="form-label">Mật khẩu</label>
+      <input name="password" type="password" class="form-control" required>
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input">
+      <label class="form-check-label">Ghi nhớ tài khoản</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-block">Đăng nhập</button>
+  </form>
+  <hr>
+  <p class="text-center text-muted">Chưa có tài khoản? <a href="/access/signup">Đăng ký ngay</a></p>
+</div>

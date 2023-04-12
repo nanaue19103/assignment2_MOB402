@@ -1,0 +1,35 @@
+{{#unless isSearch}}
+<div class="row align-items-center pb-5">
+    {{!-- Item --}}
+    <div class="col-auto">
+        <p class=" my-auto">{{count}}/{{max}} items</p>
+    </div>
+    {{!-- Pagination --}}
+    <div class="col-auto ms-auto">
+        <ul class="pagination justify-content-end my-auto">
+            {{!-- Prev --}}
+            {{#if disablePrev}}
+            <li class="page-item"><a class="btn page-link disabled">Previous</a></li>
+            {{else}}
+            <li class="page-item"><a class="btn page-link" href="/{{router}}/list/{{decrease page}}">Previous</a></li>
+            {{/if}}
+            
+            {{!-- Paginate --}}
+            {{#each start}}
+            <li class="page-item"><a class="btn page-link" href="/{{router}}/list/{{this}}">{{this}}</a></li>
+            {{/each}}
+            <li class="page-item"><a class="btn page-link active" href="/{{router}}/list/{{page}}">{{page}}</a></li>
+            {{#each end}}
+            <li class="page-item"><a class="btn page-link" href="/{{router}}/list/{{this}}">{{this}}</a></li>
+            {{/each}}
+
+            {{!-- Next --}}
+            {{#if disableNext}}
+            <li class="page-item"><a class="btn page-link disabled">Next</a></li>
+            {{else}}
+            <li class="page-item"><a class="btn page-link" href="/{{router}}/list/{{increase page}}">Next</a></li>
+            {{/if}}
+        </ul>
+    </div>
+</div>
+{{/unless}}

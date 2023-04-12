@@ -1,0 +1,63 @@
+<div class="row">
+    <table class="table table-striped table-borderless table-hover table-responsive shadow">
+        <!-- Head -->
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>View</th>
+                <th>Email</th>
+                <th>Full Name</th>
+                <th>Avatar</th>
+                <th>Admin</th>
+                <th>Update</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <!-- Body -->
+        <tbody>
+            {{#each usersPage}}
+            <tr>
+                <td class="align-middle">{{increase @index}}</td>
+                <td class="align-middle">
+                    <a class="btn btn-primary" href="/users/detail/{{this._id}}"><i class="fas fa-eye"></i></a>
+                </td>
+                <td class="align-middle">{{shortText this.email 20}}</td>
+                <td class="align-middle">{{this.full_name}}</td>
+                <td class="align-middle">
+                    <img src="{{this.avt}}" width="48px" height="48px" alt="" class="rounded-circle">
+                </td>
+                <td class="align-middle">{{this.admin}}</td>
+                <td class="align-middle">
+                    <a class="btn btn-primary" href="/users/update/{{this._id}}"><i class="fas fa-edit"></i></a>
+                </td>
+                <td class="align-middle">
+                    <button class="btn btn-danger" type="button" data-bs-toggle="modal" data-bs-target="#modal_{{this._id}}">
+                        <i class="fas fa-trash"></i>
+                    </button>
+                </td>
+            </tr>
+            <!-- The Modal -->
+            <div class="modal fade" id="modal_{{this._id}}" tabindex="-1" aria-labelledby="modal_{{this._id}}_label" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!-- Modal Header -->
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modal_{{this._id}}_label">Delete User</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <!-- Modal Body -->
+                        <div class="modal-body">
+                            Are you sure you want to delete this user?
+                        </div>
+                        <!-- Modal Footer -->
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">No</button>
+                            <a type="button" class="btn btn-danger" href="/users/delete/{{this._id}}">Yes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </tbody>
+    </table>
+</div>

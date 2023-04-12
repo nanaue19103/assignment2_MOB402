@@ -1,0 +1,20 @@
+<div class="container w-50 p-5 my-5 shadow">
+
+
+    {{!-- Form --}}
+    <form action="/products/create" method="post">
+        {{!-- Button --}}
+        <div class="row mb-3">
+            <a class="btn btn-dark col-auto me-auto" href="/products/list/{{page}}/"><i class="fa-solid fa-arrow-left"></i>
+                Back</a>
+            <code class="mx-auto col-auto">{{notify}}</code>
+            <button type="submit" class="btn btn-primary col-auto ms-auto">Add new Product</button>
+        </div>
+
+        {{!-- Input --}}
+        {{> product_input}}
+
+    </form>
+
+
+</div>

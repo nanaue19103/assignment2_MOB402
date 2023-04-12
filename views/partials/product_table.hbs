@@ -1,0 +1,64 @@
+<div class="row">
+  <div class="col-md-12">
+    <div class="table-responsive">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>View</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Image</th>
+            <th>Update</th>
+            <th>Delete</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each productsPage}}
+          <tr>
+            <td>{{increase @index}}</td>
+            <td>
+              <a href="/products/detail/{{this._id}}">
+                <i class="fa-regular fa-eye"></i>
+              </a>
+            </td>
+            <td>{{shortText this.name 20}}</td>
+            <td>{{this.price}}</td>
+            <td>
+              <img src={{this.img}} width="48px" height="48px" alt="" class="rounded-circle">
+            </td>
+            <td>
+              <a href="/products/update/{{this._id}}" class="btn btn-sm btn-primary">
+                <i class="fa-regular fa-pen-to-square"></i>
+              </a>
+            </td>
+            <td>
+              <button type="button" class="btn btn-sm btn-danger" data-bs-toggle="modal" data-bs-target="#modal_{{this._id}}">
+                <i class="fa-regular fa-trash-can"></i>
+              </button>
+            </td>
+          </tr>
+          <!-- The Modal -->
+          <div class="modal fade" id="modal_{{this._id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">Delete Product</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <p>Are you sure you want to delete <strong>{{this.name}} - {{this.price}}</strong>?</p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                  <a href="/products/delete/{{this._id}}" class="btn btn-danger">Delete</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

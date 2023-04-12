@@ -1,0 +1,30 @@
+<div class="container">
+
+
+    {{!-- Button --}}
+    <div class="row my-4  p-4 my-5 ">
+        {{!-- Go to Add --}}
+        <div class="col-auto">
+            <a class="btn btn-dark" href="/products/create"><i class="fa-solid fa-product-plus"></i> Add new product</a>
+        </div>
+        {{!-- Find --}}
+        <div class="col-auto ms-auto">
+            <form action="/products/list_search" method="post">
+                <div class=" input-group">
+                    <span class="input-group-text">Input your search</span>
+                    <input name="name" type="text"  class="form-control" placeholder="Name">
+                    <input name="price" type="number"  class="form-control" placeholder="Price">
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{!-- Table --}}
+    {{> product_table}}
+
+
+    {{!-- Footer --}}
+    {{> pagination}}
+
+</div>

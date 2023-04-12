@@ -1,0 +1,23 @@
+<div class="mb-3">
+    <label class="form-label">Email</label>
+    <input name="email" type="email" class="form-control" value="{{user.email}}" {{#if disableEmail}}disabled{{/if}} required>
+</div>
+<div class="mb-3">
+    <label class="form-label">Password</label>
+    <input name="password" type="text" class="form-control" value="{{user.password}}" required>
+</div>
+<div class="mb-3">
+    <label class="form-label">Full name</label>
+    <input name="full_name" type="text" class="form-control" value="{{user.full_name}}" required>
+</div>
+<div class="mb-3">
+    <label class="form-label">Avatar</label>
+    <input name="avt" type="text" class="form-control" value="{{user.avt}}" >
+</div>
+<div class="mb-3">
+    <label class="form-label">Admin</label>
+    <select name="admin" class="form-select">
+        <option value="true" {{#if admin}} selected {{/if}} >TRUE</option>
+        <option value="false" {{#unless admin}} selected {{/unless}}>FALSE</option>
+    </select>
+</div>

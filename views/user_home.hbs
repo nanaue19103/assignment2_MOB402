@@ -1,0 +1,35 @@
+<div class="container">
+
+
+    {{!-- Button --}}
+    <div class="row my-4  p-4 my-5 ">
+        {{!-- Go to Add --}}
+        <div class="col-auto">
+            <a class="btn btn-dark" href="/users/create"><i class="fa-solid fa-user-plus"></i> Add new User</a>
+        </div>
+        {{!-- Find --}}
+        <div class="col-auto ms-auto">
+            <form action="/users/list_search" method="post">
+                <div class=" input-group">
+                    <span class="input-group-text">Input your search</span>
+                    <input name="email" type="text"  class="form-control" placeholder="Email">
+                    <input name="full_name" type="text"  class="form-control" placeholder="Full name">
+                    <select name="admin" class="form-select">
+                        <option value="" >All</option>
+                        <option value="true" >TRUE</option>
+                        <option value="false" >FALSE</option>
+                    </select>
+                    <button class="btn btn-outline-secondary" type="submit">Search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    {{!-- Table --}}
+    {{> user_table}}
+
+
+    {{!-- Footer --}}
+    {{> pagination}}
+
+</div>

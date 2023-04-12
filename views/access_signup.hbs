@@ -1,0 +1,31 @@
+<div class="row w-50 p-5 mx-auto my-5 shadow">
+    <h1 class="text-center">Đăng Ký</h1>
+    <form method="post" action="/access/signup">
+        <div class="mb-3">
+            <label class="form-label">Địa chỉ mail</label>
+            <input name="email" type="email" class="form-control" required>
+            
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Mật Khẩu</label>
+            <input name="password" type="password" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Họ và tên</label>
+            <input name="full_name" type="text" class="form-control" required>
+        </div>
+        <div class="mb-3 form-check">
+            <input type="checkbox" class="form-check-input" required>
+            <label class="form-check-label">Đồng ý</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Đăng ký</button>
+    </form>
+
+    {{!-- Notify --}}
+    <code>{{notify}}</code>
+    {{!-- Go to Login --}}
+    <div class="row">
+        <p class="text-center text-muted">Quay về <a href="/access/login">Đăng nhập</a></p>
+        
+    </div>
+</div>

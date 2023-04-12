@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="row p-5">
+
+        {{!-- Card --}}
+        <div class="card mx-auto justify-content-center" style="width:500px">
+            <img class="card-img-top " src="{{product.img}}" >
+            {{!-- Content --}}
+            <div class="card-body">
+                <h4 class="card-title">Name: {{product.name}}</h4>
+                <p class="card-text">Price: {{product.price}}</p>
+                <p class="card-text">Color: {{product.color}}</p>
+                <p class="card-text">Category: {{product.category}}</p>
+                <a href="/products/list/{{page}}" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>

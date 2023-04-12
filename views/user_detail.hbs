@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="row p-5">
+
+        {{!-- Card --}}
+        <div class="card mx-auto justify-content-center" style="width:500px">
+            <img class="card-img-top " src="{{user.avt}}" >
+            {{!-- Content --}}
+            <div class="card-body">
+                <h4 class="card-title">Email: {{user.email}}</h4>
+                <p class="card-text">Full name: {{user.full_name}}</p>
+                <p class="card-text">Admin: {{user.admin}}</p>
+                <a href="/users/list/{{page}}" class="btn btn-primary">Back</a>
+            </div>
+        </div>
+
+
+    </div>
+</div>
